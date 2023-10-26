@@ -62,7 +62,6 @@ class Save extends \Magento\Backend\App\Action
             }
             
             $data = $this->_filterFormData($data);
-            //print_r($data); exit();
             $model->setData($data);
         
             try {

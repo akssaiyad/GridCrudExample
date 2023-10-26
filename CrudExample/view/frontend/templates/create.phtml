@@ -1,0 +1,37 @@
+<form class="" action="<?php echo $block->getBaseUrl().'crudexample/form/save'; ?>" id="aks-crudexample-form" method="post" enctype='multipart/form-data'  data-mage-init='{"validation": {}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span>Test Form For Crud Example Module <a href="<?php echo $block->getBaseUrl().'crudexample/form/list'; ?>">(Visit List Page)</a></span></legend><br>
+        <div class="field note no-label">Write here anything you want.</div>
+        <div class="field name">
+            <label class="label" for="name"><span><?php echo __('Name') ?></span></label>
+            <div class="control">
+                <input name="name" id="title" title="Name" value="" class="input-text" type="text" data-validate="{required:true}">
+            </div>
+        </div>
+        <div class="field email">
+            <label class="label" for="email"><span><?php echo __('Email') ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="Email" value="" class="input-text" type="email" data-validate="{required:true}">
+            </div>
+        </div>
+        <div class="field image">
+            <label class="label" for="image"><span><?php echo __('Image') ?></span></label>
+            <div class="control">
+                <input name="image" id="image" title="Image" value="" class="input-text" type="file">
+            </div>
+        </div>
+        <div class="field occupation">
+            <label class="label" for="occupation"><span><?php echo __('Occupation') ?></span></label>
+            <div class="control">
+                <textarea name="occupation" id="occupation" title="Occupation" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+        </div>
+    </div>
+</form>
