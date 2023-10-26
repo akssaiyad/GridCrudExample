@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Aks\CrudExample\Api\FormRepositoryInterface" type="Aks\CrudExample\Model\FormRepository"/>
+    <preference for="Aks\CrudExample\Api\Data\FormInterface" type="Aks\CrudExample\Model\Form"/>
+    <preference for="Aks\CrudExample\Api\Data\FormSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <virtualType name="Aks\CrudExample\Model\ResourceModel\Form\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">aks_crud_example</argument>
+            <argument name="resourceModel" xsi:type="string">Aks\CrudExample\Model\ResourceModel\Form\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="crudexample_form_grid_listing_data_source" xsi:type="string">Aks\CrudExample\Model\ResourceModel\Form\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Aks\CrudExample\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">crudexample/form/image</argument>
+            <argument name="basePath" xsi:type="string">crudexample/image</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

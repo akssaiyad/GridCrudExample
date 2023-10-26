@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+
+        <add id="Aks_CrudExample::aks_crud" title="Aks Crud Example" module="Aks_CrudExample" sortOrder="20" resource="Aks_CrudExample::CrudExample" />
+
+		<add id="Aks_CrudExample::aks_crud_index" title="Crud Example" module="Aks_CrudExample"  sortOrder="20" parent="Aks_CrudExample::aks_crud" dependsOnModule="Aks_CrudExample" action="crudexample/form/index" resource="Aks_CrudExample::CrudExample"/>
+
+		<add id="Aks_CrudExample::aks_crud_configuration" title="Configuration" module="Aks_CrudExample" sortOrder="30" parent="Aks_CrudExample::aks_crud" action="adminhtml/system_config/edit/section/aks_crud" resource="Aks_CrudExample::ConfigCrudExample"/>
+
+	</menu>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="aks_crud_example" resource="default" engine="innodb" comment="Aks Crud Example">
+        <column xsi:type="int" name="crud_id" unsigned="true" nullable="false" identity="true" comment="Crud ID"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="Name"/>
+        <column xsi:type="varchar" name="email" nullable="true" length="255" comment="Email"/>
+        <column xsi:type="varchar" name="image" nullable="true" length="255" comment="Image"/>
+        <column xsi:type="varchar" name="occupation" nullable="true" length="255" comment="Occupation"/>
+        <column xsi:type="smallint" name="store_id" nullable="true" identity="false" comment="Store Id"/>
+        <column xsi:type="smallint" name="status" unsigned="true" nullable="true" identity="false" default="1" comment="Is Enabled"/>
+        <column xsi:type="datetime" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created at"/>
+        <column xsi:type="datetime" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Update at"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="crud_id"/>
+        </constraint>
+    </table>
+
+</schema>
