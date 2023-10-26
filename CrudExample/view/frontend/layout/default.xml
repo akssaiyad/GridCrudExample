@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Aks_CrudExample::css/crudexample.css"/>
+    </head>
+    <body>
+		<referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="crudexample-header-link" ifconfig="aks_crud/general/enable">
+                <arguments>
+                	<argument name="label" xsi:type="string" translate="true">Crud Example</argument>
+                	<argument name="path" xsi:type="string">crudexample</argument>
+            	</arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="footer_links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="crudexample-footer-link" after="privacy-policy-link" ifconfig="aks_crud/general/enable">
+                <arguments>
+                	<argument name="label" xsi:type="string" translate="true">Crud Example</argument>
+                	<argument name="path" xsi:type="string">crudexample</argument>
+            	</arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

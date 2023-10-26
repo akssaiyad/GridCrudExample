@@ -1,0 +1,45 @@
+<?php $collection = $block->getFormCollection(); ?>
+<?php if($collection->count() > 0): ?>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif ?>
+    <table class="data table" id="crudexample-data-table">
+        <caption class="table-caption">Crud Example Data</caption>
+        <thead>
+            <tr>
+                <th scope="col" class="col name"><?php echo __('Name') ?></th>
+                <th scope="col" class="col email"><?php echo __('Email') ?></th>
+                <th scope="col" class="col image">Image</th>
+                <th scope="col" class="col created_at">Created At</th>
+                <th scope="col" class="col actions">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($collection as $key => $data): ?>
+                <tr>
+                    <td data-th="Name" class="col title"><?php echo $data->getName(); ?></td>
+                    <td data-th="Email" class="col author"><?php echo $data->getEmail(); ?></td>
+                    <td data-th="Image" class="col image">
+                        <?php if($data->getImage()): ?>
+                            <img width="70" height="70" src="<?php echo $block->getBaseUrl().'pub/media/crudexample/form/image/'.$data->getImage(); ?>">
+                        <?php else: ?>
+                            <p>No Image</p>
+                        <?php endif; ?>
+                    </td>
+                    <td data-th="Date" class="col created_at"><?php echo $data->getCreatedAt(); ?></td>
+                    <td data-th="Actions" class="col actions">
+                        <?php $id = ($data->getCrudId()) ? $data->getCrudId() : $data['crud_id']; ?>
+                        <a href="<?php echo $block->getBaseUrl().'crudexample/form/view/crud_id/'.$id; ?>" class="action view">
+                            <span>View</span>
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <h2>We couldn't find any records</h2>
+<?php endif; ?>
