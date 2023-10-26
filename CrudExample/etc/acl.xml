@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category  Mageants Portfolio
+ * @package   Mageants_Portfolio
+ * @copyright Copyright (c) 2020 Mageants
+ * @author    Mageants Team <support@Mageants.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Aks_CrudExample::CrudExample" title="Aks Crud Example" translate="title" sortOrder="10">
+                </resource>
+            </resource>
+        </resources>
+	</acl>
+</config>

@@ -1,0 +1,20 @@
+{
+    "aks_crud_example": {
+        "column": {
+            "crud_id": true,
+            "name": true,
+            "email": true,
+            "image": true,
+            "occupation": true,
+            "storeview": true,
+            "sortorder": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true,
+            "store_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
