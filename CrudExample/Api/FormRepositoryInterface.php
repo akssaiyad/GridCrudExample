@@ -36,15 +36,6 @@ interface FormRepositoryInterface
     );
 
     /**
-     * Add Update Data
-     *
-     * @param string[] $data
-     * @return \Aks\CrudExample\Api\Data\FormInterface
-     * @throws \Magento\Framework\Exception\LocalizedException
-     */
-    public function updateData($data);
-
-    /**
      * Delete Form
      *
      * @param \Aks\CrudExample\Api\Data\FormInterface $formData

@@ -166,29 +166,6 @@ class FormRepository implements FormRepositoryInterface
     }
 
     /**
-     * @api
-     * @param string[] $data
-     * @return mixed
-     */
-    public function updateData($data)
-    {
-        try {
-            $apiModel = $this->formFactory->create();
-
-            if(isset($data['crud_id'])){
-                $apiModel->load($data['crud_id']);
-            }
-            $apiModel->setData($data);
-            $apiModel->save();
-            
-            $response = ['success' => true, 'message' => "Save Data SuccessFully"];
-        } catch(\Exception $exception) {
-            $response = ['success' => false, 'message' => $exception->getMessage()];
-        }
-        return $response;
-    }
-
-    /**
      * Delete by Crud Id
      *
      * @param  int $crud_Id
