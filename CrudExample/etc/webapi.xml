@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/crudexample/form/:crudId" method="GET">
+        <service class="Aks\CrudExample\Api\FormRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/crudexample/form" method="GET">
+        <service class="Aks\CrudExample\Api\FormRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/crudexample/form" method="POST">
+        <service class="Aks\CrudExample\Api\FormRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Aks_CrudExample::crudexample" />
+        </resources>
+    </route>
+    <route url="/V1/crudexample/form/:crudId" method="DELETE">
+        <service class="Aks\CrudExample\Api\FormRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Aks_CrudExample::crudexample" />
+        </resources>
+    </route>
+    <route url="/V1/crudexample/form" method="PUT">
+        <service class="Aks\CrudExample\Api\FormRepositoryInterface" method="updateData"/>
+        <resources>
+            <resource ref="Aks_CrudExample::crudexample" />
+        </resources>
+    </route>
+</routes>
