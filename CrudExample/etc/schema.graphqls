@@ -1,0 +1,83 @@
+type Mutation {
+
+    insertFormData(
+        input:insertFormDataInput!
+    ):insertFormDataOutput
+    @resolver(class: "\\Aks\\CrudExample\\Model\\Resolver\\Form\\InsertFormGraph") @doc(description:"Insert Form Data")
+
+    updateFormData(
+        input: updateFormDataInput
+    ):updateFormDataOutput
+    @resolver(class: "\\Aks\\CrudExample\\Model\\Resolver\\Form\\UpdateFormGraph") @doc(description:"Update Form Data")
+
+    deleteFormData(
+        input: deleteFormDataInput
+    ):deleteFormDataOutput
+    @resolver(class: "\\Aks\\CrudExample\\Model\\Resolver\\Form\\DeleteFormGraph") @doc(description:"Delete Form Data")
+
+}
+
+input insertFormDataInput {
+    name: String @doc(description: "Name")
+    email: String @doc(description: "Email")
+    image: String @doc(description: "Image")
+    occupation: String @doc(description: "Occupation")
+    store_id: Int @doc(description: "Store View")
+    status: Int @doc(description: "Status")
+}
+
+type insertFormDataOutput {
+    message: String @doc(description: "Message")
+}
+
+input updateFormDataInput {
+    crud_id: Int @doc(description: "Crud Id")
+    name: String @doc(description: "Name")
+    email: String @doc(description: "Email")
+    image: String @doc(description: "Image")
+    occupation: String @doc(description: "Occupation")
+    store_id: Int @doc(description: "Store View")
+    status: Int @doc(description: "Status")
+}
+
+type updateFormDataOutput {
+    message: String @doc(description: "Message")
+}
+
+input deleteFormDataInput {
+    crud_id: Int @doc(description: "Crud Id")
+}
+
+type deleteFormDataOutput {
+    message: String @doc(description: "Message")
+}
+
+type Query {
+    allFormData: [allFormDataOutput] 
+    @resolver(class: "\\Aks\\CrudExample\\Model\\Resolver\\Form\\CrudExampleFormData") @doc(description: "Get All Data From Table!")
+
+    formDataById(
+        crud_id: Int @doc(description: "Crud Id")
+    ): formDataByIdOutput
+    @resolver(class: "\\Aks\\CrudExample\\Model\\Resolver\\Form\\FormDataById") @doc(description: "Get Data By Id From Table!")
+}
+
+type allFormDataOutput @doc(description: "Get All Categories From Table!") {
+    crud_id: Int @doc(description: "Crud Id")
+    name: String @doc(description: "Name")
+    email: String @doc(description: "Email")
+    image: String @doc(description: "Image")
+    occupation: String @doc(description: "Occupation")
+    store_id: Int @doc(description: "Store View")
+    status: Int @doc(description: "Status")
+}
+
+type formDataByIdOutput @doc(description: "Get Form By Id From Table!") {
+    crud_id: Int @doc(description: "Crud Id")
+    name: String @doc(description: "Name")
+    email: String @doc(description: "Email")
+    image: String @doc(description: "Image")
+    occupation: String @doc(description: "Occupation")
+    store_id: Int @doc(description: "Store View")
+    status: Int @doc(description: "Status")
+}

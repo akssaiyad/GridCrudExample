@@ -51,3 +51,66 @@ In Body :
   "occupation": "test occupation new",
   "status": "0"
 }}
+
+
+GraphQL Example
+
+{domainName}/graphql
+
+Use Post Method : Get All Data of form
+
+query{
+  allFormData {
+    crud_id
+    name
+    email
+    image
+    occupation
+    store_id
+    status
+  }
+}
+
+Use Post Method : Get Data By Id
+
+query{
+  formDataById(crud_id: 3) {
+    crud_id
+    name
+    email
+    image
+    occupation
+    store_id
+    status
+  }
+}
+
+Use Post Method : Isert New Data
+
+mutation {
+  insertFormData(
+    input: {name: "test", email: "test@gmail.com", image: "image.jpg", occupation: "test occupation", store_id: "1", status: "1"}
+  ) {
+        message
+  }
+}
+
+Use Post Method : Update existing Data
+
+mutation {
+  updateFormData(
+    input: {crud_id: "10", name: "test", email: "test@gmail.com", image: "image.jpg", occupation: "test occupation", store_id: "1", status: "1"}
+  ) {
+        message
+  }
+}
+
+Use Post Method : Delete existing Data
+
+mutation {
+  deleteFormData(
+    input: {crud_id: "10"}
+  ) {
+        message
+  }
+}
